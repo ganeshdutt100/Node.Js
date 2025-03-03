@@ -1,7 +1,6 @@
-const { isUtf8 } = require("buffer");
 const fs = require("fs");
 
-fs.readFile("./Day1/Files/example.txt", isUtf8, (err, data) => {
+fs.readFile("./Day1/Files/example.txt", "utf8", (err, data) => {
   if (err) {
     console.error("File read error: " + err);
     return;
