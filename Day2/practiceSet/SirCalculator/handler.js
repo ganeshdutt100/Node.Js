@@ -1,3 +1,4 @@
+const { sumRequestHandler } = require("./Sum");
 const requestHandler = (req, res) => {
   console.log(req.url, req.method);
   if (req.url === "/") {
@@ -118,7 +119,7 @@ const requestHandler = (req, res) => {
             </style>
           </head>
           <body>
-            <form class="calculator-form" action="/calculate" method="POST">
+            <form class="calculator-form" action="/calculate-result" method="POST">
               <h1>Welcome to Calculator App</h1>
               <div class="input-group">
                 <input type="number" name="num1" placeholder="Enter first number" required>
@@ -126,12 +127,19 @@ const requestHandler = (req, res) => {
               <div class="input-group">
                 <input type="number" name="num2" placeholder="Enter second number" required>
               </div>
+             
               <button type="submit">Calculate</button>
+             
             </form>
           </body>
         </html>
         `
     );
+  } else if (
+    req.url.toLowerCase() === "/calculate-result" &&
+    req.method === "POST"
+  ) {
+    return sumRequestHandler(req, res);
   } else {
     res.setHeader("Content-Type", "text/html");
     res.write(`
