@@ -102,7 +102,7 @@ const userRequestHandler = (req, res) => {
         const bodyObject = Object.fromEntries(params);
         console.log(bodyObject);
         fs.writeFileSync(
-          "./Day2/userInput/userData.txt",
+          "./Day2/userInput/userData.json",
           JSON.stringify(bodyObject)
         );
 
