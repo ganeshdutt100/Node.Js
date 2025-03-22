@@ -1,0 +1,15 @@
+{
+  "name": "day6",
+  "version": "1.0.0",
+  "description": "this is is a practices set",
+  "main": "code1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon code1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
